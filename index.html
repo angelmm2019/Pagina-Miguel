@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blockverse: maqueta educativa de una página para descubrir experiencias de videojuegos.">
+  <title>Blockverse | Descubre tu próxima aventura</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Blockverse, inicio">
+      <span class="brand-mark" aria-hidden="true">B</span><span>BLOCKVERSE</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰ <span class="sr-only">Abrir menú</span></button>
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <a class="nav-link active" href="#inicio">Inicio</a>
+      <a class="nav-link" href="#explorar">Descubrir</a>
+      <a class="nav-link" href="#categorias">Categorías</a>
+      <a class="nav-link" href="#acerca">Acerca del proyecto</a>
+    </nav>
+    <div class="profile">
+      <span class="avatar" aria-hidden="true">M</span>
+      <span class="profile-name">Jugador</span>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">TU PRÓXIMA AVENTURA EMPIEZA AQUÍ</p>
+        <h1>Juega. Explora.<br><span>Imagina sin límites.</span></h1>
+        <p class="hero-text">Encuentra mundos nuevos, compite con tus amigos y descubre experiencias creadas por comunidades de todo el mundo.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#explorar">Explorar juegos <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#acerca">Conocer el proyecto</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>∞</strong><span>Ideas por explorar</span></div>
+          <div><strong>06</strong><span>Experiencias de muestra</span></div>
+          <div><strong>100%</strong><span>Diseño adaptable</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración decorativa de bloques y mundos de juego" role="img">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-block block-purple"></div>
+        <div class="floating-block block-cyan"></div>
+        <div class="floating-block block-orange"></div>
+        <div class="pixel-star star-one">✦</div><div class="pixel-star star-two">✦</div>
+        <div class="hero-platform"><span>LEVEL UP</span><div class="platform-cube"><b></b><i></i></div></div>
+        <div class="art-caption">UN UNIVERSO DE POSIBILIDADES</div>
+      </div>
+    </section>
+
+    <section class="section" id="explorar">
+      <div class="section-heading">
+        <div><p class="eyebrow">SELECCIÓN PARA TI</p><h2>Experiencias destacadas</h2></div>
+        <span class="result-count" id="resultCount">6 experiencias</span>
+      </div>
+      <div class="search-row">
+        <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar experiencias</span>
+          <input id="searchInput" type="search" placeholder="Busca por nombre o categoría…" autocomplete="off">
+        </label>
+        <label class="select-wrap"><span class="sr-only">Ordenar experiencias</span>
+          <select id="sortSelect"><option value="featured">Orden recomendado</option><option value="az">Nombre: A–Z</option><option value="rating">Mejor valoración</option></select>
+        </label>
+      </div>
+      <div class="filter-list" id="categorias" role="group" aria-label="Filtrar por categoría">
+        <button class="filter-chip selected" data-category="all" aria-pressed="true">Todas</button>
+        <button class="filter-chip" data-category="aventura" aria-pressed="false">Aventura</button>
+        <button class="filter-chip" data-category="simulacion" aria-pressed="false">Simulación</button>
+        <button class="filter-chip" data-category="obby" aria-pressed="false">Obby</button>
+        <button class="filter-chip" data-category="social" aria-pressed="false">Social</button>
+      </div>
+      <div class="game-grid" id="gameGrid" aria-live="polite">
+        <article class="game-card" data-title="Isla de aventuras" data-category="aventura" data-rating="4.9">
+          <button class="game-art art-island" data-game="Isla de aventuras" aria-label="Ver detalles de Isla de aventuras"><span class="art-emoji">🏝️</span><span class="art-tag">NUEVO</span><span class="art-title">ISLA<br>AVENTURA</span></button>
+          <div class="game-info"><div><h3>Isla de aventuras</h3><p>Aventura · Exploración</p></div><button class="favorite" aria-label="Añadir Isla de aventuras a favoritos" aria-pressed="false">♡</button></div>
+          <div class="game-meta"><span>★ 4.9</span><span>◇ Mundo abierto</span></div>
+        </article>
+        <article class="game-card" data-title="Ciudad de historias" data-category="social" data-rating="4.8">
+          <button class="game-art art-city" data-game="Ciudad de historias" aria-label="Ver detalles de Ciudad de historias"><span class="art-emoji">🌆</span><span class="art-title">CITY<br>STORIES</span></button>
+          <div class="game-info"><div><h3>Ciudad de historias</h3><p>Social · Rol</p></div><button class="favorite" aria-label="Añadir Ciudad de historias a favoritos" aria-pressed="false">♡</button></div>
+          <div class="game-meta"><span>★ 4.8</span><span>◇ Juego de rol</span></div>
+        </article>
+        <article class="game-card" data-title="Torre imposible" data-category="obby" data-rating="4.7">
+          <button class="game-art art-tower" data-game="Torre imposible" aria-label="Ver detalles de Torre imposible"><span class="art-emoji">🗼</span><span class="art-title">TOWER<br>CHALLENGE</span></button>
+          <div class="game-info"><div><h3>Torre imposible</h3><p>Obby · Habilidad</p></div><button class="favorite" aria-label="Añadir Torre imposible a favoritos" aria-pressed="false">♡</button></div>
+          <div class="game-meta"><span>★ 4.7</span><span>◇ Supera niveles</span></div>
+        </article>
+        <article class="game-card" data-title="Granja tranquila" data-category="simulacion" data-rating="4.6">
+          <button class="game-art art-farm" data-game="Granja tranquila" aria-label="Ver detalles de Granja tranquila"><span class="art-emoji">🌱</span><span class="art-title">HAPPY<br>FARM</span></button>
+          <div class="game-info"><div><h3>Granja tranquila</h3><p>Simulación · Creatividad</p></div><button class="favorite" aria-label="Añadir Granja tranquila a favoritos" aria-pressed="false">♡</button></div>
+          <div class="game-meta"><span>★ 4.6</span><span>◇ Cultiva y construye</span></div>
+        </article>
+        <article class="game-card" data-title="Carrera neón" data-category="aventura" data-rating="4.8">
+          <button class="game-art art-race" data-game="Carrera neón" aria-label="Ver detalles de Carrera neón"><span class="art-emoji">🏎️</span><span class="art-title">NEON<br>RACERS</span></button>
+          <div class="game-info"><div><h3>Carrera neón</h3><p>Aventura · Carreras</p></div><button class="favorite" aria-label="Añadir Carrera neón a favoritos" aria-pressed="false">♡</button></div>
+          <div class="game-meta"><span>★ 4.8</span><span>◇ Velocidad</span></div>
+        </article>
+        <article class="game-card" data-title="Laboratorio creativo" data-category="simulacion" data-rating="4.5">
+          <button class="game-art art-lab" data-game="Laboratorio creativo" aria-label="Ver detalles de Laboratorio creativo"><span class="art-emoji">🧪</span><span class="art-title">CREATE<br>LAB</span></button>
+          <div class="game-info"><div><h3>Laboratorio creativo</h3><p>Simulación · Construcción</p></div><button class="favorite" aria-label="Añadir Laboratorio creativo a favoritos" aria-pressed="false">♡</button></div>
+          <div class="game-meta"><span>★ 4.5</span><span>◇ Crea tu mundo</span></div>
+        </article>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>No encontramos experiencias con esos criterios. Prueba otra búsqueda o categoría.</p>
+    </section>
+
+    <section class="creator-banner">
+      <div class="creator-icon" aria-hidden="true">✧</div>
+      <div><p class="eyebrow">TU IMAGINACIÓN CUENTA</p><h2>¿Y si creas tu propio mundo?</h2><p>Las mejores aventuras empiezan con una idea. Aprende, prueba y construye algo original.</p></div>
+      <a class="button button-light" href="https://create.roblox.com/docs/es-es/get-started/creating" target="_blank" rel="noopener noreferrer">Aprender a crear ↗</a>
+    </section>
+
+    <section class="about-section" id="acerca">
+      <div><p class="eyebrow">SOBRE ESTA DEMOSTRACIÓN</p><h2>Una interfaz hecha para explorar</h2></div>
+      <p>Blockverse es un proyecto académico inspirado en la organización visual de plataformas de descubrimiento de juegos. Los títulos, ilustraciones y valoraciones mostrados son ficticios y se usan únicamente para demostrar HTML, CSS y JavaScript.</p>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#inicio"><span class="brand-mark">B</span><span>BLOCKVERSE</span></a><p>Proyecto académico · HTML · CSS · JavaScript</p><a href="#inicio">Volver arriba ↑</a></footer>
+
+  <dialog id="gameDialog" class="game-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Cerrar ventana">×</button>
+    <p class="eyebrow">DETALLES DE LA EXPERIENCIA</p><h2 id="dialogTitle">Nombre del juego</h2>
+    <p id="dialogDescription">Descripción de la experiencia.</p>
+    <p class="dialog-note">Demostración académica: este botón no inicia un juego real.</p>
+    <button class="button button-primary" id="dialogOk">Entendido</button>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
